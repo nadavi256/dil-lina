@@ -1,0 +1,44 @@
+---
+import { Image } from 'astro:assets';
+import { credits, photos, type PhotoKey } from '../lib/photos';
+
+interface Props {
+  name: PhotoKey;
+  class?: string;
+  loading?: 'eager' | 'lazy';
+  fetchpriority?: 'high' | 'low' | 'auto';
+  sizes?: string;
+  framed?: boolean;
+}
+
+const {
+  name,
+  class: className,
+  loading = 'lazy',
+  fetchpriority = 'auto',
+  sizes = '(min-width: 900px) 1120px, 100vw',
+  framed = false,
+} = Astro.props;
+const credit = credits[name];
+---
+
+<figure class:list={[framed ? 'photo-frame' : 'hero-media', className]}>
+  <Image
+    src={photos[name]}
+    alt={credit.alt}
+    widths={[640, 960, 1280, 1600]}
+    sizes={sizes}
+    loading={loading}
+    fetchpriority={fetchpriority}
+    quality={68}
+    format="webp"
+  />
+  {
+    framed && (
+      <figcaption>
+        Photo by <a href={credit.photographerUrl}>{credit.photographer}</a> on{' '}
+        <a href={credit.photoUrl}>Unsplash</a>
+      </figcaption>
+    )
+  }
+</figure>

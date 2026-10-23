@@ -1,0 +1,20 @@
+---
+import { url } from '../lib/site';
+
+interface Props {
+  href: string;
+  hotel: string;
+}
+
+const { href, hotel } = Astro.props;
+---
+
+<div class="book">
+  <a class="btn" href={href} rel="sponsored noopener noreferrer" target="_blank">
+    Check prices for {hotel}
+  </a>
+  <p class="affiliate-line">
+    Affiliate link to Booking.com. A booking may earn us a commission, at no extra cost to you.
+    <a href={url('/disclosure')}>Disclosure</a>.
+  </p>
+</div>

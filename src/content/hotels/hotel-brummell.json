@@ -1,0 +1,39 @@
+{
+  "name": "Hotel Brummell",
+  "city": "barcelona",
+  "neighborhood": "Poble Sec",
+  "mark": "Br",
+  "tone": "forest",
+  "tier": "edit",
+  "featured": false,
+  "featuredOrder": 0,
+  "cityOrder": 3,
+  "summary": "Twenty rooms in Poble Sec, behind an 1870 facade, with a pool the hotel expects you to use.",
+  "description": "Hotel Brummell is a 20-room hotel at Nou de la Rambla 174, in Poble Sec, beside Montjuïc. The hotel says the facade is the 1870 original and the interior was rebuilt behind it, and it invites guests to stay in for a swim as much as to walk into the city. Parallel metro and the hill are close. It is a different bet from the Eixample grid: fewer postcards, more of a house. The rate is a TODO until someone on this desk checks it.",
+  "facts": [
+    "Nou de la Rambla 174, 08004 Barcelona",
+    "20 rooms, per the hotel",
+    "The hotel says the facade dates from 1870",
+    "Poble Sec, beside Montjuïc, with a pool"
+  ],
+  "officialCategory": null,
+  "address": {
+    "street": "Nou de la Rambla 174",
+    "postalCode": "08004",
+    "locality": "Barcelona",
+    "country": "Spain",
+    "countryCode": "ES"
+  },
+  "bookingUrl": "https://www.booking.com/hotel/es/brummell.html",
+  "price": {
+    "status": "TODO",
+    "amount": null,
+    "currency": "USD",
+    "unit": "night",
+    "occupancy": null,
+    "stayDate": null,
+    "checkedOn": null,
+    "room": null,
+    "note": "TODO: verify a live Booking.com rate for a specific date, occupancy, and room before publishing a number. Do not invent a price or a guest score."
+  }
+}

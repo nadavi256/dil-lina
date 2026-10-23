@@ -1,0 +1,79 @@
+---
+import { getCollection, render } from 'astro:content';
+import { getImage } from 'astro:assets';
+import Base from '../../layouts/Base.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import Photo from '../../components/Photo.astro';
+import { credits, photos } from '../../lib/photos';
+import { absolute, site, url } from '../../lib/site';
+
+export async function getStaticPaths() {
+  const guides = await getCollection('guides');
+  return guides.map((guide) => ({
+    params: { slug: guide.id },
+    props: { guide },
+  }));
+}
+
+const { guide } = Astro.props;
+const { Content } = await render(guide);
+const credit = credits[guide.data.photo];
+const og = await getImage({ src: photos[guide.data.photo], width: 1200, height: 630, format: 'jpg' });
+const ogUrl = new URL(og.src, site.origin).href;
+const pageUrl = absolute(`/guides/${guide.id}`);
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: absolute('/') },
+      { '@type': 'ListItem', position: 2, name: 'Guides', item: absolute('/guides') },
+      { '@type': 'ListItem', position: 3, name: guide.data.title, item: pageUrl },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: guide.data.title,
+    description: guide.data.description,
+    datePublished: guide.data.published,
+    dateModified: guide.data.updated,
+    mainEntityOfPage: pageUrl,
+    image: ogUrl,
+    author: { '@type': 'Person', name: site.operator },
+    publisher: {
+      '@type': 'Organization',
+      name: site.name,
+      url: absolute('/'),
+    },
+  },
+];
+---
+
+<Base
+  title={guide.data.title}
+  description={guide.data.description}
+  section="guides"
+  type="article"
+  image={ogUrl}
+  imageAlt={credit.alt}
+  jsonLd={jsonLd}
+>
+  <Photo name={guide.data.photo} framed loading="eager" fetchpriority="high" sizes="100vw" />
+  <article class="wrap page-hero">
+    <Breadcrumbs items={[{ label: 'Guides', href: url('/guides') }, { label: guide.data.title }]} />
+    <p class="kicker">
+      {guide.data.kicker} · {guide.data.minutes} minute read · Updated {guide.data.updated}
+    </p>
+    <h1>{guide.data.title}</h1>
+    <p class="lede">{guide.data.description}</p>
+    <div class="prose">
+      <Content />
+      <p class="note">
+        Some links in this piece, and the hotel buttons elsewhere on Lina, are affiliate links.
+        <a href={url('/disclosure')}>Read the disclosure</a>.
+      </p>
+    </div>
+  </article>
+</Base>

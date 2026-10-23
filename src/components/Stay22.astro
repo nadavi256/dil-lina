@@ -1,0 +1,19 @@
+<!--
+  Official Stay22 Script (formerly Let Me Allez).
+  The loader at https://scripts.stay22.com/letmeallez.js reads window.Stay22.params.aid
+  and rewrites Booking.com links so aid=dillina is credited.
+  It is inserted on window load so it does not compete with the first paint.
+-->
+<script is:inline>
+  window.addEventListener('load', function () {
+    (function (s, t, a, y, twenty, two) {
+      s.Stay22 = s.Stay22 || {};
+      s.Stay22.params = { aid: 'dillina' };
+      twenty = t.createElement(a);
+      two = t.getElementsByTagName(a)[0];
+      twenty.async = 1;
+      twenty.src = y;
+      two.parentNode.insertBefore(twenty, two);
+    })(window, document, 'script', 'https://scripts.stay22.com/letmeallez.js');
+  });
+</script>

@@ -1,0 +1,13 @@
+---
+interface Props {
+  data: Record<string, unknown> | Record<string, unknown>[];
+}
+
+const blocks = Array.isArray(Astro.props.data) ? Astro.props.data : [Astro.props.data];
+---
+
+{
+  blocks.map((block) => (
+    <script type="application/ld+json" set:html={JSON.stringify(block).replace(/</g, '\\u003c')} />
+  ))
+}

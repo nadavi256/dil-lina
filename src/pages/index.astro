@@ -1,0 +1,151 @@
+---
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
+import { getImage } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import Photo from '../components/Photo.astro';
+import Credit from '../components/Credit.astro';
+import HotelCard from '../components/HotelCard.astro';
+import { credits, photos } from '../lib/photos';
+import { absolute, site, url } from '../lib/site';
+
+const cities = (await getCollection('cities')).sort((a, b) => a.data.order - b.data.order);
+const cityName = Object.fromEntries(cities.map((city) => [city.id, city.data.name]));
+const featured = (await getCollection('hotels'))
+  .filter((hotel) => hotel.data.featured)
+  .sort((a, b) => a.data.featuredOrder - b.data.featuredOrder);
+const guides = (await getCollection('guides')).sort((a, b) => a.data.published.localeCompare(b.data.published));
+
+const og = await getImage({ src: photos.paris, width: 1200, height: 630, format: 'jpg' });
+const ogUrl = new URL(og.src, site.origin).href;
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: site.name,
+  url: absolute('/'),
+  description: site.description,
+  publisher: {
+    '@type': 'Organization',
+    name: site.name,
+    url: absolute('/'),
+    email: site.email,
+  },
+};
+---
+
+<Base
+  title={site.name}
+  description={site.description}
+  section="home"
+  image={ogUrl}
+  imageAlt={credits.paris.alt}
+  jsonLd={jsonLd}
+>
+  <section class="hero">
+    <Photo name="paris" loading="eager" fetchpriority="high" sizes="100vw" />
+    <div class="hero-shade"></div>
+    <div class="hero-copy">
+      <p class="kicker">The hotel edit</p>
+      <h1>Hotels that look like luxury, <em>at a price you won't believe.</em></h1>
+      <p class="lede">
+        Striking stays, mostly in the $80–150 range, and the occasional true-luxury pick. A nightly rate is printed
+        only after Lina has checked it. Until then, the button says Check prices.
+      </p>
+      <div class="hero-actions">
+        <a class="btn" href="#featured">See the edit</a>
+        <a class="btn btn-ghost" href={url('/guides/how-to-find-luxury-hotels-under-150')}>Read the method</a>
+      </div>
+      <Credit name="paris" />
+    </div>
+  </section>
+
+  <section class="section" id="featured">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="kicker">This week’s desk</p>
+          <h2>Four stays worth opening.</h2>
+        </div>
+        <p>
+          No guest scores, and no prices we have not checked. The monogram is a stand-in, not a photograph of the
+          hotel. <a href={url('/cities')}>All three cities</a>.
+        </p>
+      </div>
+      <div class="stay-grid featured">
+        {featured.map((hotel) => <HotelCard hotel={hotel} cityName={cityName[hotel.data.city] ?? ''} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top: 0">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="kicker">Cities</p>
+          <h2>Paris, Rome, Barcelona.</h2>
+        </div>
+        <p>Three hotels in each city. Add another by dropping a JSON file in the hotel collection.</p>
+      </div>
+      <div class="city-scroll">
+        {
+          cities.map((city) => (
+            <a class="city-panel" href={url(`/cities/${city.id}`)}>
+              <Image
+                src={photos[city.data.photo]}
+                alt=""
+                widths={[640, 960]}
+                sizes="(min-width: 900px) 33vw, 80vw"
+                quality={68}
+                format="webp"
+              />
+              <span class="shade"></span>
+              <div class="copy">
+                <p class="kicker">{city.data.country}</p>
+                <h3>{city.data.name}</h3>
+                <p>{city.data.headline}</p>
+              </div>
+            </a>
+          ))
+        }
+      </div>
+      <p class="inline-credit">
+        Photographs by{' '}
+        <a href={credits.paris.photographerUrl}>{credits.paris.photographer}</a>,{' '}
+        <a href={credits.rome.photographerUrl}>{credits.rome.photographer}</a>, and{' '}
+        <a href={credits.barcelona.photographerUrl}>{credits.barcelona.photographer}</a> on Unsplash. Full credits sit
+        on each city page. These are pictures of the cities, not of the hotels.
+      </p>
+    </div>
+  </section>
+
+  <section class="section band">
+    <div class="wrap">
+      <p class="kicker">From the desk</p>
+      <h2>How the list is made.</h2>
+      <div class="guide-list" style="margin-top: 1.5rem">
+        {
+          guides.map((guide) => (
+            <a class="guide-card" href={url(`/guides/${guide.id}`)}>
+              <figure class="shot">
+                <Image
+                  src={photos[guide.data.photo]}
+                  alt=""
+                  widths={[640, 960]}
+                  sizes="(min-width: 800px) 50vw, 100vw"
+                  quality={68}
+                  format="webp"
+                />
+              </figure>
+              <div class="pad">
+                <p class="kicker">{guide.data.kicker}</p>
+                <h3>{guide.data.title}</h3>
+                <p>{guide.data.description}</p>
+              </div>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+</Base>

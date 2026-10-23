@@ -1,0 +1,39 @@
+{
+  "name": "Hôtel Jeanne d'Arc Le Marais",
+  "city": "paris",
+  "neighborhood": "Le Marais, 4th arrondissement",
+  "mark": "JA",
+  "tone": "wine",
+  "tier": "edit",
+  "featured": false,
+  "featuredOrder": 0,
+  "cityOrder": 2,
+  "summary": "A 3-star the hotel itself presents as an economical stay in the Marais, on rue de Jarente.",
+  "description": "Hôtel Jeanne d'Arc Le Marais is at 3 rue de Jarente, in the 4th. The hotel’s own site calls the house a 3-star and puts the emphasis on a central Marais address rather than a grand lobby. That is the brief Lina is hunting: a room with a sense of place, and a rate you confirm on Booking.com instead of taking our word for it.",
+  "facts": [
+    "3 rue de Jarente, 75004 Paris",
+    "The hotel describes itself as a 3-star",
+    "In the Marais",
+    "Official site presents it as an economical stay"
+  ],
+  "officialCategory": 3,
+  "address": {
+    "street": "3 rue de Jarente",
+    "postalCode": "75004",
+    "locality": "Paris",
+    "country": "France",
+    "countryCode": "FR"
+  },
+  "bookingUrl": "https://www.booking.com/hotel/fr/jeanne-d-39-arc-paris.html",
+  "price": {
+    "status": "TODO",
+    "amount": null,
+    "currency": "USD",
+    "unit": "night",
+    "occupancy": null,
+    "stayDate": null,
+    "checkedOn": null,
+    "room": null,
+    "note": "TODO: verify a live Booking.com rate for a specific date, occupancy, and room before publishing a number. Do not invent a price or a guest score."
+  }
+}

@@ -1,0 +1,61 @@
+---
+import Base from '../layouts/Base.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { absolute, site, url } from '../lib/site';
+
+const description =
+  'Lina is an editor’s list of hotels that look like a splurge. It is operated by Nadav Stern and it does not invent prices or guest scores.';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'AboutPage',
+  name: 'About Lina',
+  url: absolute('/about'),
+  description,
+  mainEntity: {
+    '@type': 'Organization',
+    name: site.name,
+    email: site.email,
+    url: absolute('/'),
+  },
+};
+---
+
+<Base title="About" description={description} section="about" jsonLd={jsonLd}>
+  <article class="wrap page-hero">
+    <Breadcrumbs items={[{ label: 'About' }]} />
+    <p class="kicker">The edit</p>
+    <h1>A list with a budget, and a rule about numbers.</h1>
+    <div class="prose">
+      <p>
+        Lina looks for hotels that feel like a treat and often land around $80 to $150 a night, plus the occasional
+        place that is honestly expensive. The audience is international. The cities on the desk right now are
+        <a href={url('/cities/paris')}>Paris</a>, <a href={url('/cities/rome')}>Rome</a>, and
+        <a href={url('/cities/barcelona')}>Barcelona</a>.
+      </p>
+      <p>
+        The rule is stricter than the taste. A nightly rate is published only after it has been checked for a date, a
+        room, and an occupancy. A guest score is not copied onto these pages at all. If a figure is missing, the
+        record is marked TODO and the button sends you to Booking.com to see the live price. That is a choice, not an
+        unfinished sentence we forgot.
+      </p>
+      <p>
+        Hotel pages do not use another building’s photograph and call it the property. City pages use royalty-free
+        photographs from Unsplash, with the photographer credited on the picture.
+      </p>
+      <h2>Who runs it</h2>
+      <p>
+        Lina is operated by {site.operator}. The earlier version of this site was a Hebrew page of checked lodging
+        deals in Israel. This English edition replaces it. The repository name is unchanged.
+      </p>
+      <p>
+        Questions, corrections, and hotels worth a look go to
+        <a href={`mailto:${site.email}`}>{site.email}</a>, or through the <a href={url('/contact')}>contact page</a>.
+      </p>
+      <p>
+        Some links earn a commission if you book. That is explained in the
+        <a href={url('/disclosure')}>affiliate disclosure</a>, and in a short line next to the booking buttons.
+      </p>
+    </div>
+  </article>
+</Base>

@@ -1,0 +1,14 @@
+---
+import { credits, type PhotoKey } from '../lib/photos';
+
+interface Props {
+  name: PhotoKey;
+}
+
+const credit = credits[Astro.props.name];
+---
+
+<p class="credit">
+  Photo by <a href={credit.photographerUrl}>{credit.photographer}</a> on{' '}
+  <a href={credit.photoUrl}>Unsplash</a>. City photograph, not a picture of a hotel.
+</p>

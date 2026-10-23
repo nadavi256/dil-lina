@@ -1,0 +1,55 @@
+---
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { photos } from '../../lib/photos';
+import { absolute, url } from '../../lib/site';
+
+const cities = (await getCollection('cities')).sort((a, b) => a.data.order - b.data.order);
+const description = 'City edits from Lina: three hotels each in Paris, Rome, and Barcelona, with rates left unchecked until they are verified.';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: 'Cities',
+  url: absolute('/cities'),
+  description,
+};
+---
+
+<Base title="Cities" description={description} jsonLd={jsonLd}>
+  <div class="wrap page-hero">
+    <Breadcrumbs items={[{ label: 'Cities' }]} />
+    <p class="kicker">Where to open first</p>
+    <h1>Three cities, nine hotels.</h1>
+    <p class="lede">
+      Each city page holds three hotels. New cities are a JSON file plus a photograph with a real credit. New hotels
+      are another JSON file pointed at that city.
+    </p>
+  </div>
+  <section class="section" style="padding-top: 1rem">
+    <div class="wrap city-scroll" style="padding-bottom: 3rem">
+      {
+        cities.map((city) => (
+          <a class="city-panel" href={url(`/cities/${city.id}`)}>
+            <Image
+              src={photos[city.data.photo]}
+              alt=""
+              widths={[640, 960]}
+              sizes="(min-width: 900px) 33vw, 80vw"
+              quality={68}
+              format="webp"
+            />
+            <span class="shade"></span>
+            <div class="copy">
+              <p class="kicker">{city.data.country}</p>
+              <h2>{city.data.name}</h2>
+              <p>{city.data.summary}</p>
+            </div>
+          </a>
+        ))
+      }
+    </div>
+  </section>
+</Base>
