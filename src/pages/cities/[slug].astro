@@ -1,0 +1,78 @@
+---
+import { getCollection } from 'astro:content';
+import { getImage } from 'astro:assets';
+import Base from '../../layouts/Base.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import HotelCard from '../../components/HotelCard.astro';
+import Photo from '../../components/Photo.astro';
+import { photos, credits } from '../../lib/photos';
+import { absolute, site, url } from '../../lib/site';
+
+export async function getStaticPaths() {
+  const cities = await getCollection('cities');
+  const hotels = await getCollection('hotels');
+  return cities.map((city) => ({
+    params: { slug: city.id },
+    props: {
+      city,
+      hotels: hotels
+        .filter((hotel) => hotel.data.city === city.id)
+        .sort((a, b) => a.data.cityOrder - b.data.cityOrder),
+    },
+  }));
+}
+
+const { city, hotels } = Astro.props;
+const credit = credits[city.data.photo];
+const og = await getImage({ src: photos[city.data.photo], width: 1200, height: 630, format: 'jpg' });
+const ogUrl = new URL(og.src, site.origin).href;
+const pageUrl = absolute(`/cities/${city.id}`);
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: absolute('/') },
+      { '@type': 'ListItem', position: 2, name: 'Cities', item: absolute('/cities') },
+      { '@type': 'ListItem', position: 3, name: city.data.name, item: pageUrl },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'City',
+    name: city.data.name,
+    url: pageUrl,
+    description: city.data.summary,
+    containedInPlace: { '@type': 'Country', name: city.data.country },
+  },
+];
+---
+
+<Base
+  title={`${city.data.name} hotels`}
+  description={city.data.summary}
+  section={city.id}
+  image={ogUrl}
+  imageAlt={credit.alt}
+  jsonLd={jsonLd}
+>
+  <Photo name={city.data.photo} framed loading="eager" fetchpriority="high" sizes="100vw" />
+  <article class="wrap page-hero">
+    <Breadcrumbs items={[{ label: 'Cities', href: url('/cities') }, { label: city.data.name }]} />
+    <p class="kicker">{city.data.country}</p>
+    <h1>{city.data.headline}</h1>
+    <p class="lede">{city.data.intro}</p>
+  </article>
+  <section class="section" style="padding-top: 0.5rem">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Three hotels in {city.data.name}.</h2>
+        <p>Rates are marked TODO until checked. Buttons go to each hotel’s page on Booking.com.</p>
+      </div>
+      <div class="stay-grid cities">
+        {hotels.map((hotel) => <HotelCard hotel={hotel} cityName={city.data.name} />)}
+      </div>
+    </div>
+  </section>
+</Base>

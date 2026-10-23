@@ -1,0 +1,50 @@
+---
+import Base from '../layouts/Base.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { absolute, site, url } from '../lib/site';
+
+const description =
+  'Lina participates in affiliate programs, including Booking.com links monetized with the Stay22 script. A commission does not increase the rate you pay.';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: 'Affiliate disclosure',
+  url: absolute('/disclosure'),
+  description,
+};
+---
+
+<Base title="Affiliate disclosure" description={description} jsonLd={jsonLd}>
+  <article class="wrap page-hero">
+    <Breadcrumbs items={[{ label: 'Affiliate disclosure' }]} />
+    <p class="kicker">Plainly</p>
+    <h1>Some links pay for the editing.</h1>
+    <div class="prose">
+      <p>
+        Lina participates in affiliate programs. Hotel buttons on this site go to that hotel’s page on Booking.com.
+        The site also loads the Stay22 script, formerly called Let Me Allez, with affiliate id <strong>{site.aid}</strong>.
+        Stay22 can rewrite a Booking.com link so that a completed booking may be credited to Lina.
+      </p>
+      <p>
+        If you book through one of these links, Lina may earn a commission. The commission is paid by the advertiser.
+        It is not added to the price you pay. You should see the same room rate you would see by opening Booking.com
+        yourself.
+      </p>
+      <p>
+        Commission does not decide which hotels are listed, and it does not create a price or a guest score. A rate is
+        printed only after it has been checked. Until then the entry stays marked TODO. Hotels are chosen because they
+        fit the edit: a striking room, a useful neighborhood, and, sometimes, a true-luxury name kept on the list for
+        contrast.
+      </p>
+      <p>
+        A short version of this notice sits in the footer, beside the other links, and again next to every Check
+        prices button.
+      </p>
+      <p>
+        Questions: <a href={`mailto:${site.email}`}>{site.email}</a>. See also the
+        <a href={url('/privacy')}>privacy policy</a> and the <a href={url('/terms')}>terms</a>.
+      </p>
+    </div>
+  </article>
+</Base>

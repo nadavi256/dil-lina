@@ -1,0 +1,35 @@
+---
+import { site, url } from '../lib/site';
+
+const links = [
+  ['About', url('/about')],
+  ['Contact', url('/contact')],
+  ['Guides', url('/guides')],
+  ['Cities', url('/cities')],
+  ['Affiliate disclosure', url('/disclosure')],
+  ['Privacy', url('/privacy')],
+  ['Terms', url('/terms')],
+];
+---
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="disclosure-line">
+      Some links are affiliate links. If you book, Lina may earn a commission, at no extra cost to you.
+      <a href={url('/disclosure')}>Affiliate disclosure</a>.
+    </p>
+    <ul class="footer-links">
+      {
+        links.map(([label, href]) => (
+          <li>
+            <a href={href}>{label}</a>
+          </li>
+        ))
+      }
+    </ul>
+    <p class="legal-meta">
+      © {new Date().getFullYear()} {site.name}. Operated by {site.operator}. City photographs are credited on each
+      picture. Hotel pages do not use another property’s photo.
+    </p>
+  </div>
+</footer>

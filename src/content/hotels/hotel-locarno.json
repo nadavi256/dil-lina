@@ -1,0 +1,39 @@
+{
+  "name": "Hotel Locarno",
+  "city": "rome",
+  "neighborhood": "Piazza del Popolo",
+  "mark": "Lo",
+  "tone": "night",
+  "tier": "true-luxury",
+  "featured": true,
+  "featuredOrder": 4,
+  "cityOrder": 3,
+  "summary": "A true-luxury pick: the hotel calls itself a five-star, opened in 1925, on Via della Penna.",
+  "description": "Hotel Locarno is Lina’s true-luxury pick in Rome, not a bargain dressed up as one. The hotel says it opened in 1925, files itself as a five-star, and keeps the address at Via della Penna 22, just off Piazza del Popolo. People come for the history and the roof, not for a loophole in the rate. We have not checked a current price and we will not invent one. Use the button and read Booking.com.",
+  "facts": [
+    "Via della Penna 22, 00186 Rome",
+    "The hotel says it opened in 1925",
+    "The hotel calls itself a five-star",
+    "Just off Piazza del Popolo"
+  ],
+  "officialCategory": 5,
+  "address": {
+    "street": "Via della Penna 22",
+    "postalCode": "00186",
+    "locality": "Rome",
+    "country": "Italy",
+    "countryCode": "IT"
+  },
+  "bookingUrl": "https://www.booking.com/hotel/it/locarno.html",
+  "price": {
+    "status": "TODO",
+    "amount": null,
+    "currency": "USD",
+    "unit": "night",
+    "occupancy": null,
+    "stayDate": null,
+    "checkedOn": null,
+    "room": null,
+    "note": "TODO: verify a live Booking.com rate for a specific date, occupancy, and room before publishing a number. Do not invent a price or a guest score."
+  }
+}

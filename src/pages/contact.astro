@@ -1,0 +1,62 @@
+---
+import Base from '../layouts/Base.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { site, url } from '../lib/site';
+
+const description = `Write to ${site.operator} at ${site.email} with a correction, a hotel to consider, or a rate you think Lina should check.`;
+---
+
+<Base title="Contact" description={description}>
+  <article class="wrap page-hero">
+    <Breadcrumbs items={[{ label: 'Contact' }]} />
+    <p class="kicker">The desk</p>
+    <h1>Send a note.</h1>
+    <div class="prose">
+      <p>
+        Lina does not take bookings. For a room, use the Check prices button on the hotel page. For the person who
+        edits the list, write to <a href={`mailto:${site.email}`}>{site.email}</a>. A reply usually takes a few
+        working days.
+      </p>
+      <p>Useful notes include:</p>
+      <ul>
+        <li>a wrong address or a fact that has gone stale</li>
+        <li>a hotel that looks like the brief, with the city and a link</li>
+        <li>a rate you checked, with the date, the room, and who it was for</li>
+      </ul>
+      <p>
+        The form opens an email to {site.email} in your own mail app. It is not sent to a server run by Lina. If the
+        button does nothing, use the address above.
+      </p>
+      <form class="form" id="contact-form">
+        <label>
+          Name
+          <input name="name" autocomplete="name" required />
+        </label>
+        <label>
+          Email
+          <input name="email" type="email" autocomplete="email" required />
+        </label>
+        <label>
+          Message
+          <textarea name="message" rows="6" required></textarea>
+        </label>
+        <button class="btn btn-ink" type="submit">Open an email</button>
+      </form>
+      <p>
+        Read the <a href={url('/privacy')}>privacy policy</a> for what this site does and does not store.
+      </p>
+    </div>
+  </article>
+  <script is:inline define:vars={{ email: site.email }}>
+    const form = document.getElementById('contact-form');
+    form?.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const data = new FormData(form);
+      const subject = encodeURIComponent('Note for Lina');
+      const body = encodeURIComponent(
+        `Name: ${data.get('name')}\nEmail: ${data.get('email')}\n\n${data.get('message')}`,
+      );
+      window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
+    });
+  </script>
+</Base>

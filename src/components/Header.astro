@@ -1,0 +1,40 @@
+---
+import { url } from '../lib/site';
+
+interface Props {
+  section?: string;
+}
+
+const { section = '' } = Astro.props;
+
+const links = [
+  { id: 'paris', href: url('/cities/paris'), label: 'Paris' },
+  { id: 'rome', href: url('/cities/rome'), label: 'Rome' },
+  { id: 'barcelona', href: url('/cities/barcelona'), label: 'Barcelona' },
+  { id: 'guides', href: url('/guides'), label: 'Guides' },
+  { id: 'about', href: url('/about'), label: 'About' },
+];
+---
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="logo" href={url('/')}>
+      <strong>Lina</strong>
+      <span>The hotel edit</span>
+    </a>
+    <input id="nav-toggle" class="nav-toggle" type="checkbox" />
+    <label class="nav-button" for="nav-toggle">
+      <span class="open">Menu</span>
+      <span class="close">Close</span>
+    </label>
+    <nav class="nav" aria-label="Primary">
+      {
+        links.map((link) => (
+          <a href={link.href} aria-current={section === link.id ? 'page' : undefined}>
+            {link.label}
+          </a>
+        ))
+      }
+    </nav>
+  </div>
+</header>

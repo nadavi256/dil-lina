@@ -1,0 +1,71 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Stay22 from '../components/Stay22.astro';
+import JsonLd from '../components/JsonLd.astro';
+import { absolute, site, url } from '../lib/site';
+
+interface Props {
+  title: string;
+  description: string;
+  section?: string;
+  image?: string;
+  imageAlt?: string;
+  type?: 'website' | 'article';
+  noindex?: boolean;
+  jsonLd?: Record<string, unknown> | Record<string, unknown>[];
+}
+
+const {
+  title,
+  description,
+  section = '',
+  image = absolute('/og.jpg'),
+  imageAlt = 'Lina, the hotel edit',
+  type = 'website',
+  noindex = false,
+  jsonLd,
+} = Astro.props;
+
+const canonical = noindex ? absolute('/') : new URL(Astro.url.pathname, site.origin).href;
+const fullTitle = title === site.name ? `${site.name} · Hotels that look like luxury` : `${title} · ${site.name}`;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta name="robots" content={noindex ? 'noindex, follow' : 'index, follow'} />
+    <meta name="theme-color" content="#4c1c27" />
+    <meta name="author" content={site.operator} />
+    <meta property="og:site_name" content={site.name} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content={type} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:locale" content={site.locale} />
+    <meta property="og:image" content={image} />
+    <meta property="og:image:alt" content={imageAlt} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image} />
+    <link rel="icon" href={url('/favicon.svg')} type="image/svg+xml" />
+    <link rel="sitemap" href={absolute('/sitemap-index.xml')} />
+    {jsonLd && <JsonLd data={jsonLd} />}
+  </head>
+  <body>
+    <a class="skip" href="#content">Skip to content</a>
+    <Header section={section} />
+    <main id="content">
+      <slot />
+    </main>
+    <Footer />
+    <Stay22 />
+  </body>
+</html>

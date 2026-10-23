@@ -1,0 +1,59 @@
+---
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { photos } from '../../lib/photos';
+import { absolute, url } from '../../lib/site';
+
+const guides = (await getCollection('guides')).sort((a, b) => a.data.published.localeCompare(b.data.published));
+const description =
+  'Practical guides from Lina on finding hotels that look luxurious without trusting an unchecked nightly rate.';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: 'Guides',
+  url: absolute('/guides'),
+  description,
+};
+---
+
+<Base title="Guides" description={description} section="guides" jsonLd={jsonLd}>
+  <div class="wrap page-hero">
+    <Breadcrumbs items={[{ label: 'Guides' }]} />
+    <p class="kicker">The desk</p>
+    <h1>Read this before you trust a rate.</h1>
+    <p class="lede">
+      Two short pieces. One is the method behind the $80–150 hunt. The other is the checklist to run on the booking
+      page itself.
+    </p>
+  </div>
+  <section class="section" style="padding-top: 0.5rem">
+    <div class="wrap guide-list" style="padding-bottom: 3rem">
+      {
+        guides.map((guide) => (
+          <a class="guide-card" href={url(`/guides/${guide.id}`)}>
+            <figure class="shot">
+              <Image
+                src={photos[guide.data.photo]}
+                alt=""
+                widths={[640, 960]}
+                sizes="(min-width: 800px) 50vw, 100vw"
+                quality={68}
+                format="webp"
+              />
+            </figure>
+            <div class="pad">
+              <p class="kicker">
+                {guide.data.kicker} · {guide.data.minutes} min
+              </p>
+              <h2>{guide.data.title}</h2>
+              <p>{guide.data.description}</p>
+            </div>
+          </a>
+        ))
+      }
+    </div>
+  </section>
+</Base>

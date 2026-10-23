@@ -1,0 +1,123 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import BookLink from '../../components/BookLink.astro';
+import PriceNote from '../../components/PriceNote.astro';
+import HotelCard from '../../components/HotelCard.astro';
+import { absolute, url } from '../../lib/site';
+
+export async function getStaticPaths() {
+  const hotels = await getCollection('hotels');
+  const cities = await getCollection('cities');
+  const cityById = Object.fromEntries(cities.map((city) => [city.id, city]));
+  return hotels.map((hotel) => ({
+    params: { slug: hotel.id },
+    props: {
+      hotel,
+      city: cityById[hotel.data.city],
+      related: hotels
+        .filter((other) => other.data.city === hotel.data.city && other.id !== hotel.id)
+        .sort((a, b) => a.data.cityOrder - b.data.cityOrder),
+    },
+  }));
+}
+
+const { hotel, city, related } = Astro.props;
+if (!city) {
+  throw new Error(`Missing city ${hotel.data.city} for ${hotel.id}`);
+}
+
+const pageUrl = absolute(`/hotels/${hotel.id}`);
+const tier = hotel.data.tier === 'true-luxury' ? 'True-luxury pick' : 'On the edit';
+const { address } = hotel.data;
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: absolute('/') },
+      { '@type': 'ListItem', position: 2, name: city.data.name, item: absolute(`/cities/${city.id}`) },
+      { '@type': 'ListItem', position: 3, name: hotel.data.name, item: pageUrl },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'LodgingBusiness',
+    name: hotel.data.name,
+    description: hotel.data.summary,
+    url: pageUrl,
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: address.street,
+      postalCode: address.postalCode,
+      addressLocality: address.locality,
+      addressCountry: address.countryCode,
+    },
+  },
+];
+---
+
+<Base title={hotel.data.name} description={hotel.data.summary} section={city.id} jsonLd={jsonLd}>
+  <article class="wrap page-hero">
+    <Breadcrumbs
+      items={[
+        { label: city.data.name, href: url(`/cities/${city.id}`) },
+        { label: hotel.data.name },
+      ]}
+    />
+    <p class="kicker">{city.data.name} · {tier}</p>
+    <h1>{hotel.data.name}</h1>
+    <p class="lede">{hotel.data.neighborhood}</p>
+  </article>
+  <div class="wrap split" style="padding-bottom: 3rem">
+    <div class="prose">
+      <div class={`tone tone-${hotel.data.tone}`} style="min-height: 14rem; margin-bottom: 1.4rem">
+        <p class="tone-kicker">No stand-in photograph</p>
+        <p class="tone-mark" aria-hidden="true">{hotel.data.mark}</p>
+      </div>
+      <p>{hotel.data.description}</p>
+      <h2>What is actually known</h2>
+      <ul class="facts">
+        {hotel.data.facts.map((fact) => <li>{fact}</li>)}
+      </ul>
+      {
+        hotel.data.officialCategory && (
+          <p>
+            Official category: {hotel.data.officialCategory}-star, as stated by the hotel. That is a classification,
+            not a guest score. Lina does not reprint review averages.
+          </p>
+        )
+      }
+      <p>
+        <a href={url(`/cities/${city.id}`)}>More hotels in {city.data.name}</a>. The way a rate earns a place on this page is described in
+        <a href={url('/guides/how-to-find-luxury-hotels-under-150')}>the method behind the list</a>.
+      </p>
+    </div>
+    <aside class="booking-card">
+      <p class="kicker">Book</p>
+      <h2 style="font-size: 2rem">Check the live rate.</h2>
+      <p>
+        {address.street}<br />
+        {address.postalCode} {address.locality}, {address.country}
+      </p>
+      <PriceNote price={hotel.data.price} />
+      <BookLink href={hotel.data.bookingUrl} hotel={hotel.data.name} />
+    </aside>
+  </div>
+  {
+    related.length > 0 && (
+      <section class="section" style="padding-top: 0">
+        <div class="wrap">
+          <h2>Also in {city.data.name}.</h2>
+          <div class="stay-grid cities">
+            {related.map((other) => (
+              <HotelCard hotel={other} cityName={city.data.name} />
+            ))}
+          </div>
+        </div>
+      </section>
+    )
+  }
+</Base>

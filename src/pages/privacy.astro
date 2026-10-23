@@ -1,0 +1,45 @@
+---
+import Base from '../layouts/Base.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { site, url } from '../lib/site';
+
+const description =
+  'Lina is a static site. It does not run an account system or first-party analytics. The Stay22 script and Booking.com may process data when you use them.';
+---
+
+<Base title="Privacy" description={description}>
+  <article class="wrap page-hero">
+    <Breadcrumbs items={[{ label: 'Privacy' }]} />
+    <p class="kicker">Updated 23 October 2026</p>
+    <h1>What this site stores.</h1>
+    <div class="prose">
+      <p>
+        Lina is a static website operated by {site.operator}. There is no account, no booking engine, and no
+        first-party analytics. Pages are files. Visiting them does not create a profile on a database we run.
+      </p>
+      <h2>Email</h2>
+      <p>
+        If you write to <a href={`mailto:${site.email}`}>{site.email}</a>, or use the contact form, your message is
+        handled by your email provider and by the inbox at that address. The form does not submit to a Lina server. It
+        opens a draft in your mail app. Keep whatever you send to what you are comfortable sharing.
+      </p>
+      <h2>Stay22 and Booking.com</h2>
+      <p>
+        Pages include the Stay22 script so Booking.com links can be monetized for affiliate id {site.aid}. That script
+        is loaded from Stay22 and may set cookies, read technical information about the browser, and rewrite hotel
+        links. When you continue to Booking.com, their own site applies, including their cookies and their privacy
+        policy. Lina does not control those systems.
+      </p>
+      <h2>Hosting</h2>
+      <p>
+        The site is hosted on GitHub Pages. GitHub may process standard server logs for the host. Their documentation
+        describes that processing.
+      </p>
+      <h2>Questions</h2>
+      <p>
+        Write to <a href={`mailto:${site.email}`}>{site.email}</a>. The <a href={url('/disclosure')}>affiliate disclosure</a>
+        explains the commercial relationship. The <a href={url('/terms')}>terms</a> explain what the pages are for.
+      </p>
+    </div>
+  </article>
+</Base>

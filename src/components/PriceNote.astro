@@ -1,0 +1,55 @@
+---
+interface Price {
+  status: 'TODO' | 'verified';
+  amount: number | null;
+  currency: 'USD';
+  unit: 'night';
+  occupancy: string | null;
+  stayDate: string | null;
+  checkedOn: string | null;
+  room: string | null;
+  note: string;
+}
+
+interface Props {
+  price: Price;
+  compact?: boolean;
+}
+
+const { price, compact = false } = Astro.props;
+const verified =
+  price.status === 'verified' &&
+  price.amount != null &&
+  price.checkedOn &&
+  price.stayDate &&
+  price.occupancy &&
+  price.room;
+
+const formatted =
+  verified && price.amount != null
+    ? new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(
+        price.amount,
+      )
+    : null;
+---
+
+<div class="price-note">
+  {
+    verified && formatted ? (
+      <p class="verified-price">
+        {formatted}
+        <span>
+          {price.room}, {price.occupancy}, night of {price.stayDate}. Checked {price.checkedOn}.
+        </span>
+      </p>
+    ) : (
+      <>
+        <p class="todo-flag">TODO</p>
+        <p>
+          Nightly rate not checked yet. Nothing is printed here until a live price is verified.
+          {!compact && ` ${price.note}`}
+        </p>
+      </>
+    )
+  }
+</div>

@@ -1,0 +1,28 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import BookLink from './BookLink.astro';
+import PriceNote from './PriceNote.astro';
+import { url } from '../lib/site';
+
+interface Props {
+  hotel: CollectionEntry<'hotels'>;
+  cityName: string;
+}
+
+const { hotel, cityName } = Astro.props;
+const tier = hotel.data.tier === 'true-luxury' ? 'True-luxury pick' : 'On the edit';
+---
+
+<article class="stay-card">
+  <div class={`tone tone-${hotel.data.tone}`}>
+    <p class="tone-kicker">{cityName} · {tier}</p>
+    <p class="tone-mark" aria-hidden="true">{hotel.data.mark}</p>
+  </div>
+  <div class="stay-body">
+    <h3><a href={url(`/hotels/${hotel.id}`)}>{hotel.data.name}</a></h3>
+    <p class="neighborhood">{hotel.data.neighborhood}</p>
+    <p class="summary">{hotel.data.summary}</p>
+    <PriceNote price={hotel.data.price} compact />
+    <BookLink href={hotel.data.bookingUrl} hotel={hotel.data.name} />
+  </div>
+</article>
