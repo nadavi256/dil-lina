@@ -7,9 +7,9 @@
   "tier": "edit",
   "featured": false,
   "featuredOrder": 0,
-  "cityOrder": 1,
+  "cityOrder": 2,
   "summary": "A townhouse hotel on Rambla de Catalunya, a few minutes’ walk from Plaça Catalunya.",
-  "description": "Praktik Rambla is at Rambla de Catalunya 27, in the Eixample. The hotel places it a few minutes on foot from Plaça Catalunya and about a minute from Passeig de Gràcia. The public listing describes a townhouse interior with original columns and tiled floors. Lina is interested in that kind of room: old bones, a central pin, no invented nightly rate underneath the name.",
+  "description": "Praktik Rambla is at Rambla de Catalunya 27, in the Eixample. The hotel places it a few minutes on foot from Plaça Catalunya and about a minute from Passeig de Gràcia. The public listing describes a townhouse interior with original columns and tiled floors. Lina is interested in that kind of room: old bones and a central pin. The rate printed here is the Double Room Booking.com showed for two adults on 10–11 November 2026.",
   "facts": [
     "Rambla de Catalunya 27, 08007 Barcelona",
     "Eixample",
@@ -26,14 +26,21 @@
   },
   "bookingUrl": "https://www.booking.com/hotel/es/praktik-rambla.html",
   "price": {
-    "status": "TODO",
-    "amount": null,
+    "status": "verified",
     "currency": "USD",
     "unit": "night",
-    "occupancy": null,
-    "stayDate": null,
-    "checkedOn": null,
-    "room": null,
-    "note": "TODO: verify a live Booking.com rate for a specific date, occupancy, and room before publishing a number. Do not invent a price or a guest score."
+    "occupancy": "2 adults",
+    "stayDate": "2026-11-10 to 2026-11-11",
+    "checkedOn": "2026-10-23",
+    "note": "Checked Nov 10–11, 2026 · prices change",
+    "amount": 168,
+    "room": "Double Room"
+  },
+  "review": {
+    "score": 8.9,
+    "count": 1970,
+    "source": "Booking.com",
+    "scale": 10,
+    "checkedOn": "2026-10-23"
   }
 }

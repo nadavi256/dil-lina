@@ -39,8 +39,12 @@ for (const file of files) {
   if (!html.includes("aid: 'dillina'") && !html.includes('aid: "dillina"')) {
     errors.push(`${file} is missing the Stay22 aid`);
   }
-  if (file.split(sep).includes('hotels') && /\$\d/.test(html)) {
-    errors.push(`${file} prints a dollar amount`);
+  if (file.split(sep).includes('hotels')) {
+    if (!html.includes('Checked Nov 10–11, 2026 · prices change')) {
+      errors.push(`${file} is missing the checked-price note`);
+    }
+    if (!html.includes('from $')) errors.push(`${file} is missing a from-price`);
+    if (html.includes('TODO')) errors.push(`${file} still shows a TODO price`);
   }
   const refs = [...html.matchAll(/\b(?:href|src)=["']([^"']+)["']/g)].map((match) => match[1]);
   const internal = [];

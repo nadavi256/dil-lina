@@ -22,7 +22,7 @@ const tier = hotel.data.tier === 'true-luxury' ? 'True-luxury pick' : 'On the ed
     <h3><a href={url(`/hotels/${hotel.id}`)}>{hotel.data.name}</a></h3>
     <p class="neighborhood">{hotel.data.neighborhood}</p>
     <p class="summary">{hotel.data.summary}</p>
-    <PriceNote price={hotel.data.price} compact />
+    <PriceNote price={hotel.data.price} review={hotel.data.review} compact />
     <BookLink href={hotel.data.bookingUrl} hotel={hotel.data.name} />
   </div>
 </article>

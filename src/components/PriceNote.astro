@@ -11,19 +11,29 @@ interface Price {
   note: string;
 }
 
+interface Review {
+  score: number;
+  count: number;
+  source: 'Booking.com';
+  scale: 10;
+  checkedOn: string;
+}
+
 interface Props {
   price: Price;
+  review?: Review | null;
   compact?: boolean;
 }
 
-const { price, compact = false } = Astro.props;
+const { price, review = null, compact = false } = Astro.props;
 const verified =
   price.status === 'verified' &&
   price.amount != null &&
   price.checkedOn &&
   price.stayDate &&
   price.occupancy &&
-  price.room;
+  price.room &&
+  review != null;
 
 const formatted =
   verified && price.amount != null
@@ -31,17 +41,25 @@ const formatted =
         price.amount,
       )
     : null;
+
+const reviewCount =
+  review != null ? new Intl.NumberFormat('en-US').format(review.count) : null;
 ---
 
 <div class="price-note">
   {
-    verified && formatted ? (
-      <p class="verified-price">
-        {formatted}
-        <span>
-          {price.room}, {price.occupancy}, night of {price.stayDate}. Checked {price.checkedOn}.
-        </span>
-      </p>
+    verified && formatted && review && reviewCount ? (
+      <>
+        <p class="verified-price">
+          <span class="from">from {formatted}</span>
+          <span class="unit"> / night</span>
+        </p>
+        <p class="price-meta">Checked Nov 10–11, 2026 · prices change</p>
+        <p class="price-meta">
+          Booking.com {review.score.toFixed(1)} · {reviewCount} reviews
+        </p>
+        {!compact && <p class="price-meta">{price.room}, {price.occupancy}.</p>}
+      </>
     ) : (
       <>
         <p class="todo-flag">TODO</p>

@@ -7,9 +7,9 @@
   "tier": "edit",
   "featured": false,
   "featuredOrder": 0,
-  "cityOrder": 2,
+  "cityOrder": 3,
   "summary": "A Design Hotels house on Piazza di Pasquino, just off Piazza Navona, in a historic palazzo.",
-  "description": "G-Rough is a member of Design Hotels at Piazza di Pasquino 69, a few steps from Piazza Navona. The hotel’s own account describes a historic palazzo you enter through a wine bar rather than a formal lobby, and a Roman founder’s idea of an apartment you are handed the key to. It is on this list because it looks like the trip, not because we are claiming a bargain. Open the Booking.com page for the live price.",
+  "description": "G-Rough is a member of Design Hotels at Piazza di Pasquino 69, a few steps from Piazza Navona. The hotel’s own account describes a historic palazzo you enter through a wine bar rather than a formal lobby, and a Roman founder’s idea of an apartment you are handed the key to. It is on this list because it looks like the trip, not because it is a bargain. Breakfast was included in the Junior Suite rate Booking.com showed for 10–11 November 2026.",
   "facts": [
     "Piazza di Pasquino 69, 00186 Rome",
     "Just off Piazza Navona",
@@ -26,14 +26,21 @@
   },
   "bookingUrl": "https://www.booking.com/hotel/it/g-rough.html",
   "price": {
-    "status": "TODO",
-    "amount": null,
+    "status": "verified",
     "currency": "USD",
     "unit": "night",
-    "occupancy": null,
-    "stayDate": null,
-    "checkedOn": null,
-    "room": null,
-    "note": "TODO: verify a live Booking.com rate for a specific date, occupancy, and room before publishing a number. Do not invent a price or a guest score."
+    "occupancy": "2 adults",
+    "stayDate": "2026-11-10 to 2026-11-11",
+    "checkedOn": "2026-10-23",
+    "note": "Checked Nov 10–11, 2026 · prices change",
+    "amount": 387,
+    "room": "Junior Suite"
+  },
+  "review": {
+    "score": 8.8,
+    "count": 270,
+    "source": "Booking.com",
+    "scale": 10,
+    "checkedOn": "2026-10-23"
   }
 }

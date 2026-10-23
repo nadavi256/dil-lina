@@ -1,0 +1,46 @@
+{
+  "name": "Dina Suite Rome",
+  "city": "rome",
+  "neighborhood": "Tiburtino",
+  "mark": "DS",
+  "tone": "sea",
+  "tier": "edit",
+  "featured": true,
+  "featuredOrder": 2,
+  "cityOrder": 1,
+  "summary": "A suite hotel in Tiburtino, east of the historic center, with a terrace room on the listing.",
+  "description": "Dina Suite Rome is at Via Domenico de Dominicis 36, in Tiburtino. Booking.com places it outside the postcard center, which is why a night here can sit under the hotels by the station. The rate printed here is the Double Room with Terrace the listing showed for two adults on 10–11 November 2026.",
+  "facts": [
+    "Via Domenico de Dominicis 36, 00159 Rome",
+    "Tiburtino",
+    "The checked room is the Double Room with Terrace",
+    "Booking.com showed the rate before VAT and city tax"
+  ],
+  "officialCategory": null,
+  "address": {
+    "street": "Via Domenico de Dominicis 36",
+    "postalCode": "00159",
+    "locality": "Rome",
+    "country": "Italy",
+    "countryCode": "IT"
+  },
+  "bookingUrl": "https://www.booking.com/hotel/it/dina-suite-rome.html",
+  "price": {
+    "status": "verified",
+    "amount": 78,
+    "currency": "USD",
+    "unit": "night",
+    "occupancy": "2 adults",
+    "stayDate": "2026-11-10 to 2026-11-11",
+    "checkedOn": "2026-10-23",
+    "room": "Double Room with Terrace",
+    "note": "Checked Nov 10–11, 2026 · prices change"
+  },
+  "review": {
+    "score": 9.5,
+    "count": 310,
+    "source": "Booking.com",
+    "scale": 10,
+    "checkedOn": "2026-10-23"
+  }
+}

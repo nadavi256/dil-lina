@@ -8,7 +8,7 @@ minutes: 6
 photo: barcelona-sagrada
 ---
 
-A design hotel is very good at the first three seconds. Stone, a lamp, a plant, a bed in a pool of light. The booking page is where that picture either holds or falls apart. Run this list before you pay. It is the same list Lina uses before a rate is allowed out of the TODO state.
+A design hotel is very good at the first three seconds. Stone, a lamp, a plant, a bed in a pool of light. The booking page is where that picture either holds or falls apart. Run this list before you pay. It is the same list Lina uses before a rate is printed.
 
 ## The total, not the teaser
 
@@ -30,10 +30,10 @@ Read the rate name. Flexible and non-refundable are different purchases. A lower
 
 ## Recent words from guests, on the booking site
 
-Lina does not reprint guest scores. A single number ages badly, and copying it into an article makes it look like a fact we measured. On Booking.com, read the newest reviews and the middling ones. Look for notes about noise, heat, and the difference between the photograph and the room. A hotel can be wonderful and still wrong for a light sleeper on a Saturday.
+When Lina prints a Booking.com score, it is their number, with the review count and the day it was read. It is not a score we measured. On Booking.com, read the newest reviews and the middling ones. Look for notes about noise, heat, and the difference between the photograph and the room. A hotel can be wonderful and still wrong for a light sleeper on a Saturday.
 
 ## Then book in the open
 
 Use the hotel’s page on Booking.com, including the buttons on this site. Those buttons are affiliate links. If you book, Lina may earn a commission, and that commission is not added to your rate. The [affiliate disclosure](/dil-lina/disclosure/) says this in full. If you would rather book on the hotel’s own site after you have compared, do that. A good hotel note should survive the click.
 
-When a rate on Lina eventually leaves the TODO state, it will name the room, the occupancy, the night, and the day it was checked. Anything short of that is a story, not a price.
+A rate on Lina names the room, the occupancy, the night, and the day it was checked. Anything short of that is a story, not a price. The current figures are for 10–11 November 2026.

@@ -1,0 +1,46 @@
+{
+  "name": "Hôtel Opéra Liège",
+  "city": "paris",
+  "neighborhood": "9th arrondissement",
+  "mark": "OL",
+  "tone": "brass",
+  "tier": "edit",
+  "featured": true,
+  "featuredOrder": 1,
+  "cityOrder": 1,
+  "summary": "A hotel on rue de Liège in the 9th, the arrondissement that holds Opéra Garnier.",
+  "description": "Hôtel Opéra Liège is at 9 rue de Liège, in the 9th arrondissement. Booking.com places it on that street, north of Opéra Garnier and toward Gare Saint-Lazare. The rate printed here is the Classic Room the listing showed for two adults on 10–11 November 2026.",
+  "facts": [
+    "9 rue de Liège, 75009 Paris",
+    "9th arrondissement",
+    "The checked room is the Classic Room",
+    "Booking.com showed the rate before VAT and city tax"
+  ],
+  "officialCategory": null,
+  "address": {
+    "street": "9 rue de Liège",
+    "postalCode": "75009",
+    "locality": "Paris",
+    "country": "France",
+    "countryCode": "FR"
+  },
+  "bookingUrl": "https://www.booking.com/hotel/fr/hotel-opera-liege.html",
+  "price": {
+    "status": "verified",
+    "amount": 147,
+    "currency": "USD",
+    "unit": "night",
+    "occupancy": "2 adults",
+    "stayDate": "2026-11-10 to 2026-11-11",
+    "checkedOn": "2026-10-23",
+    "room": "Classic Room",
+    "note": "Checked Nov 10–11, 2026 · prices change"
+  },
+  "review": {
+    "score": 9.0,
+    "count": 1288,
+    "source": "Booking.com",
+    "scale": 10,
+    "checkedOn": "2026-10-23"
+  }
+}

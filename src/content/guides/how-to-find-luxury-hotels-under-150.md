@@ -8,7 +8,7 @@ minutes: 7
 photo: paris-night
 ---
 
-Lina’s brief is simple to say and annoying to do well. Find a hotel that looks like a treat, then see if a real night, for two people, in a real room, lands somewhere around $80 to $150. The second half is the part most roundups skip. They publish a number from memory, or from a screenshot that expired on a Tuesday in March. This site will not. A rate appears here only after it has been checked for a date, a room, and an occupancy. Until then the button says Check prices, and the record is marked TODO.
+Lina’s brief is simple to say and annoying to do well. Find a hotel that looks like a treat, then see if a real night, for two people, in a real room, lands somewhere around $80 to $150. The second half is the part most roundups skip. They publish a number from memory, or from a screenshot that expired on a Tuesday in March. This site will not. A rate appears here only after it has been checked for a date, a room, and an occupancy. The figures on the hotel pages were read on Booking.com for 10–11 November 2026. Plenty of them sit above $150 on that night. The button still goes to the live page, because the number will move.
 
 That does not make the hunt mystical. The hotels that clear the bar tend to share a few boring traits.
 
@@ -32,14 +32,14 @@ Weeknights and the shoulder seasons — late autumn, late winter, the weeks just
 
 ## Prefer a point of view to a star
 
-Official stars are a classification, not a mood. A 3-star with a courtyard and a considered room can look more expensive than a tired 5-star by the station. When a hotel states its own category, Lina will repeat that fact and label it as the hotel’s category. It is not a guest score. Guest scores move, they are easy to fake in a blog post, and they are already sitting on Booking.com next to the button. Go read them there, including the recent complaints, which are more useful than the average.
+Official stars are a classification, not a mood. A 3-star with a courtyard and a considered room can look more expensive than a tired 5-star by the station. When a hotel states its own category, Lina will repeat that fact and label it as the hotel’s category. A Booking.com score on these pages is theirs, printed with the review count and the day it was read. It is not a Lina rating. Still open the recent reviews, including the complaints, which are more useful than the average.
 
 ## Keep one true-luxury name in the set
 
-Not every name on a list like this should be a clever bargain. [Hotel Locarno](/dil-lina/hotels/hotel-locarno/) in Rome calls itself a five-star and dates its opening to 1925. It is on Lina as a true-luxury pick: a reminder of what the full-price version of this feeling costs, and a stay worth opening when the occasion is the money. It is not secretly a $150 hotel. If a future check shows a striking rate, that rate can be printed, with the date. Until then it stays a TODO, same as the rest.
+Not every name on a list like this should be a clever bargain. [Hotel Locarno](/dil-lina/hotels/hotel-locarno/) in Rome calls itself a five-star and dates its opening to 1925. It is on Lina as a true-luxury pick: a reminder of what the full-price version of this feeling costs, and a stay worth opening when the occasion is the money. It is not secretly a $150 hotel. The rate checked for 10–11 November 2026 is printed on its page, and it is the expensive one.
 
 ## What to do with a page on this site
 
-Open the hotel note. Read the address and the handful of facts, which are things the hotel or its listing actually says. Ignore the absence of a dollar figure — that absence is deliberate. Then use Check prices, which goes to that hotel’s Booking.com page. If the script on this site is running, Stay22 may route the click so a booking can be credited to Lina. The room rate you are shown is still Booking.com’s rate. Commission is not added on top.
+Open the hotel note. Read the address and the handful of facts, which are things the hotel or its listing actually says. The dollar figure is the Booking.com rate checked for 10–11 November 2026, two adults. It is not a promise for your dates. Then use Check prices, which goes to that hotel’s Booking.com page. If the script on this site is running, Stay22 may route the click so a booking can be credited to Lina. The room rate you are shown is still Booking.com’s rate. Commission is not added on top.
 
 If you spot a wrong address or a fact that has gone stale, write to the editor. Corrections are how a list like this stays honest. The method, in one line: judge the room, step one neighborhood out, read the total for your real dates, and do not trust a price that nobody checked.

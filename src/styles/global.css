@@ -446,7 +446,7 @@ button.btn {
   }
 
   .stay-grid.featured .stay-card:first-child {
-    grid-row: span 3;
+    grid-row: span 2;
   }
 
   .stay-grid.featured .stay-card:first-child .tone {
@@ -578,20 +578,28 @@ button.btn {
   padding-top: 0.35rem;
 }
 
-.verified-price {
+.price-note .verified-price {
   margin: 0;
+  color: var(--color-ink);
   font-family: var(--font-serif);
   font-size: 2rem;
   line-height: 1;
 }
 
-.verified-price span {
-  display: block;
-  margin-top: 0.3rem;
+.verified-price .from,
+.verified-price .unit {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.price-meta {
+  margin: 0.35rem 0 0;
+  color: var(--color-muted);
   font-family: var(--font-sans);
   font-size: 0.85rem;
-  color: var(--color-muted);
-  letter-spacing: 0;
+  line-height: 1.35;
 }
 
 .city-scroll {
