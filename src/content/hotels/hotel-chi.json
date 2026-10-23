@@ -1,0 +1,46 @@
+{
+  "name": "Chi",
+  "city": "barcelona",
+  "neighborhood": "Eixample, Gran Via",
+  "mark": "Ch",
+  "tone": "brass",
+  "tier": "edit",
+  "featured": false,
+  "featuredOrder": 0,
+  "cityOrder": 2,
+  "summary": "A hotel on Gran Via in the Eixample, beside Rocafort metro.",
+  "description": "Chi is at Gran Via de les Corts Catalanes 455, in the Eixample. The listing places it beside Rocafort metro and about a fifteen-minute walk from Plaça Catalunya. The rate printed here is the Standard Twin Room Booking.com showed for two adults on 10–11 November 2026.",
+  "facts": [
+    "Gran Via de les Corts Catalanes 455, 08015 Barcelona",
+    "Eixample, beside Rocafort metro",
+    "The checked room is the Standard Twin Room",
+    "Booking.com showed the rate before VAT and city tax"
+  ],
+  "officialCategory": null,
+  "address": {
+    "street": "Gran Via de les Corts Catalanes 455",
+    "postalCode": "08015",
+    "locality": "Barcelona",
+    "country": "Spain",
+    "countryCode": "ES"
+  },
+  "bookingUrl": "https://www.booking.com/hotel/es/chi.html",
+  "price": {
+    "status": "verified",
+    "currency": "USD",
+    "unit": "night",
+    "occupancy": "2 adults",
+    "stayDate": "2026-11-10 to 2026-11-11",
+    "checkedOn": "2026-10-23",
+    "note": "Checked Nov 10–11, 2026 · prices change",
+    "amount": 116,
+    "room": "Standard Twin Room"
+  },
+  "review": {
+    "score": 8.8,
+    "count": 4255,
+    "source": "Booking.com",
+    "scale": 10,
+    "checkedOn": "2026-10-23"
+  }
+}

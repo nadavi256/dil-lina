@@ -23,6 +23,8 @@ export async function getStaticPaths() {
 }
 
 const { city, hotels } = Astro.props;
+const edit = hotels.filter((hotel) => hotel.data.tier === 'edit');
+const splurge = hotels.filter((hotel) => hotel.data.tier === 'true-luxury');
 const credit = credits[city.data.photo];
 const og = await getImage({ src: photos[city.data.photo], width: 1200, height: 630, format: 'jpg' });
 const ogUrl = new URL(og.src, site.origin).href;
@@ -67,12 +69,29 @@ const jsonLd = [
   <section class="section" style="padding-top: 0.5rem">
     <div class="wrap">
       <div class="section-head">
-        <h2>Four hotels in {city.data.name}.</h2>
-        <p>Each rate was read on Booking.com for 10–11 November 2026. Buttons go to that hotel’s page.</p>
+        <h2>{edit.length} hotels at $150 or under.</h2>
+        <p>
+          Each score is 8.5 or higher on Booking.com. Each rate was read for 10–11 November 2026, two adults.
+        </p>
       </div>
       <div class="stay-grid cities">
-        {hotels.map((hotel) => <HotelCard hotel={hotel} cityName={city.data.name} />)}
+        {edit.map((hotel) => <HotelCard hotel={hotel} cityName={city.data.name} />)}
       </div>
     </div>
   </section>
+  {
+    splurge.length > 0 && (
+      <section class="section" style="padding-top: 0">
+        <div class="wrap">
+          <div class="section-head">
+            <h2>The splurge.</h2>
+            <p>One true-luxury hotel in {city.data.name}, checked the same night, and priced like it.</p>
+          </div>
+          <div class="stay-grid cities">
+            {splurge.map((hotel) => <HotelCard hotel={hotel} cityName={city.data.name} />)}
+          </div>
+        </div>
+      </section>
+    )
+  }
 </Base>

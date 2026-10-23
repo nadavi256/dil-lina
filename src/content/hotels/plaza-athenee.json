@@ -1,0 +1,46 @@
+{
+  "name": "Hôtel Plaza Athénée",
+  "city": "paris",
+  "neighborhood": "Avenue Montaigne, 8th arrondissement",
+  "mark": "PA",
+  "tone": "night",
+  "tier": "true-luxury",
+  "featured": false,
+  "featuredOrder": 0,
+  "cityOrder": 5,
+  "summary": "The splurge in Paris: a Dorchester Collection palace on Avenue Montaigne.",
+  "description": "Hôtel Plaza Athénée is Lina’s splurge in Paris. The listing places it at 25 Avenue Montaigne, in the 8th, and files it with the Dorchester Collection. The line on the page is that Avenue Montaigne sets the pace. The rate printed here is the Superior Room Booking.com showed for two adults on 10–11 November 2026, and it is the expensive one on purpose.",
+  "facts": [
+    "25 Avenue Montaigne, 75008 Paris",
+    "Dorchester Collection",
+    "8th arrondissement",
+    "The checked room is the Superior Room"
+  ],
+  "officialCategory": null,
+  "address": {
+    "street": "25 Avenue Montaigne",
+    "postalCode": "75008",
+    "locality": "Paris",
+    "country": "France",
+    "countryCode": "FR"
+  },
+  "bookingUrl": "https://www.booking.com/hotel/fr/ha-tel-plaza-athe-ne-e-na-c-esparis.html",
+  "price": {
+    "status": "verified",
+    "currency": "USD",
+    "unit": "night",
+    "occupancy": "2 adults",
+    "stayDate": "2026-11-10 to 2026-11-11",
+    "checkedOn": "2026-10-23",
+    "note": "Checked Nov 10–11, 2026 · prices change",
+    "amount": 2239,
+    "room": "Superior Room"
+  },
+  "review": {
+    "score": 9.2,
+    "count": 231,
+    "source": "Booking.com",
+    "scale": 10,
+    "checkedOn": "2026-10-23"
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Hotel Elysa-Luxembourg",
+  "city": "paris",
+  "neighborhood": "Latin Quarter, 5th arrondissement",
+  "mark": "EL",
+  "tone": "olive",
+  "tier": "edit",
+  "featured": false,
+  "featuredOrder": 0,
+  "cityOrder": 3,
+  "summary": "A 19th-century building on rue Gay-Lussac, a short walk from the Luxembourg Gardens.",
+  "description": "Hotel Elysa-Luxembourg is at 6 rue Gay-Lussac, in the 5th. The listing calls it a 19th-century building a two-minute walk from the Luxembourg Gardens, in the Latin Quarter. The rate printed here is the Standard Double or Twin Room Booking.com showed for two adults on 10–11 November 2026.",
+  "facts": [
+    "6 rue Gay-Lussac, 75005 Paris",
+    "The listing calls the building 19th-century",
+    "A short walk from the Luxembourg Gardens",
+    "The checked room is the Standard Double or Twin Room"
+  ],
+  "officialCategory": null,
+  "address": {
+    "street": "6 rue Gay-Lussac",
+    "postalCode": "75005",
+    "locality": "Paris",
+    "country": "France",
+    "countryCode": "FR"
+  },
+  "bookingUrl": "https://www.booking.com/hotel/fr/elysa-luxembourg.html",
+  "price": {
+    "status": "verified",
+    "currency": "USD",
+    "unit": "night",
+    "occupancy": "2 adults",
+    "stayDate": "2026-11-10 to 2026-11-11",
+    "checkedOn": "2026-10-23",
+    "note": "Checked Nov 10–11, 2026 · prices change",
+    "amount": 140,
+    "room": "Standard Double or Twin Room"
+  },
+  "review": {
+    "score": 8.5,
+    "count": 1546,
+    "source": "Booking.com",
+    "scale": 10,
+    "checkedOn": "2026-10-23"
+  }
+}

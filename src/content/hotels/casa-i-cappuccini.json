@@ -1,0 +1,46 @@
+{
+  "name": "Casa I Cappuccini",
+  "city": "rome",
+  "neighborhood": "Via Veneto",
+  "mark": "CC",
+  "tone": "clay",
+  "tier": "edit",
+  "featured": false,
+  "featuredOrder": 0,
+  "cityOrder": 2,
+  "summary": "A restored monastery on Via Veneto, a short walk from the Spanish Steps.",
+  "description": "Casa I Cappuccini is at Via Veneto 21. The listing describes a restored monastery on that street, and places the Spanish Steps a short walk away. The rate printed here is the Double or Twin Room Booking.com showed for two adults on 10–11 November 2026.",
+  "facts": [
+    "Via Veneto 21, 00187 Rome",
+    "The listing describes a restored monastery",
+    "On Via Veneto",
+    "The checked room is the Double or Twin Room"
+  ],
+  "officialCategory": null,
+  "address": {
+    "street": "Via Veneto 21",
+    "postalCode": "00187",
+    "locality": "Rome",
+    "country": "Italy",
+    "countryCode": "IT"
+  },
+  "bookingUrl": "https://www.booking.com/hotel/it/casa-i-cappuccini.html",
+  "price": {
+    "status": "verified",
+    "currency": "USD",
+    "unit": "night",
+    "occupancy": "2 adults",
+    "stayDate": "2026-11-10 to 2026-11-11",
+    "checkedOn": "2026-10-23",
+    "note": "Checked Nov 10–11, 2026 · prices change",
+    "amount": 114,
+    "room": "Double or Twin Room"
+  },
+  "review": {
+    "score": 9.5,
+    "count": 832,
+    "source": "Booking.com",
+    "scale": 10,
+    "checkedOn": "2026-10-23"
+  }
+}

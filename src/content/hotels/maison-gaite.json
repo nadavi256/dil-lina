@@ -1,0 +1,46 @@
+{
+  "name": "Maison Gaïté",
+  "city": "paris",
+  "neighborhood": "Montparnasse, 14th arrondissement",
+  "mark": "MG",
+  "tone": "forest",
+  "tier": "edit",
+  "featured": false,
+  "featuredOrder": 0,
+  "cityOrder": 2,
+  "summary": "A hotel on rue Vandamme in the 14th, with an indoor pool the listing describes as a heated plunge.",
+  "description": "Maison Gaïté is at 7 rue Vandamme, in the 14th arrondissement, on the Montparnasse side of Paris. The listing describes an indoor swimming pool, a heated plunge. The rate printed here is the Small Double Room Booking.com showed for two adults on 10–11 November 2026.",
+  "facts": [
+    "7 rue Vandamme, 75014 Paris",
+    "14th arrondissement, Montparnasse",
+    "The listing describes an indoor heated plunge pool",
+    "The checked room is the Small Double Room"
+  ],
+  "officialCategory": null,
+  "address": {
+    "street": "7 rue Vandamme",
+    "postalCode": "75014",
+    "locality": "Paris",
+    "country": "France",
+    "countryCode": "FR"
+  },
+  "bookingUrl": "https://www.booking.com/hotel/fr/new-parnasse.html",
+  "price": {
+    "status": "verified",
+    "currency": "USD",
+    "unit": "night",
+    "occupancy": "2 adults",
+    "stayDate": "2026-11-10 to 2026-11-11",
+    "checkedOn": "2026-10-23",
+    "note": "Checked Nov 10–11, 2026 · prices change",
+    "amount": 130,
+    "room": "Small Double Room"
+  },
+  "review": {
+    "score": 8.9,
+    "count": 1031,
+    "source": "Booking.com",
+    "scale": 10,
+    "checkedOn": "2026-10-23"
+  }
+}

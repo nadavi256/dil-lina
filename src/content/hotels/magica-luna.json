@@ -1,0 +1,46 @@
+{
+  "name": "Magica Luna Boutique Hotel",
+  "city": "rome",
+  "neighborhood": "Via Calabria",
+  "mark": "ML",
+  "tone": "plum",
+  "tier": "edit",
+  "featured": false,
+  "featuredOrder": 0,
+  "cityOrder": 4,
+  "summary": "A boutique hotel on Via Calabria, with a shared lounge on the listing.",
+  "description": "Magica Luna Boutique Hotel is at Via Calabria 17. The listing describes air-conditioned rooms and a shared lounge. The rate printed here is the Standard Double Room Booking.com showed for two adults on 10–11 November 2026.",
+  "facts": [
+    "Via Calabria 17, 00187 Rome",
+    "The listing calls it a boutique hotel",
+    "Shared lounge, per the listing",
+    "The checked room is the Standard Double Room"
+  ],
+  "officialCategory": null,
+  "address": {
+    "street": "Via Calabria 17",
+    "postalCode": "00187",
+    "locality": "Rome",
+    "country": "Italy",
+    "countryCode": "IT"
+  },
+  "bookingUrl": "https://www.booking.com/hotel/it/magica-luna-boutique-roma.html",
+  "price": {
+    "status": "verified",
+    "currency": "USD",
+    "unit": "night",
+    "occupancy": "2 adults",
+    "stayDate": "2026-11-10 to 2026-11-11",
+    "checkedOn": "2026-10-23",
+    "note": "Checked Nov 10–11, 2026 · prices change",
+    "amount": 137,
+    "room": "Standard Double Room"
+  },
+  "review": {
+    "score": 8.8,
+    "count": 601,
+    "source": "Booking.com",
+    "scale": 10,
+    "checkedOn": "2026-10-23"
+  }
+}

@@ -14,6 +14,13 @@ const cityName = Object.fromEntries(cities.map((city) => [city.id, city.data.nam
 const featured = (await getCollection('hotels'))
   .filter((hotel) => hotel.data.featured)
   .sort((a, b) => a.data.featuredOrder - b.data.featuredOrder);
+const splurges = (await getCollection('hotels'))
+  .filter((hotel) => hotel.data.tier === 'true-luxury')
+  .sort((a, b) => cityNameOrder(a.data.city) - cityNameOrder(b.data.city));
+
+function cityNameOrder(id: string) {
+  return id === 'paris' ? 1 : id === 'rome' ? 2 : 3;
+}
 const guides = (await getCollection('guides')).sort((a, b) => a.data.published.localeCompare(b.data.published));
 
 const og = await getImage({ src: photos.paris, width: 1200, height: 630, format: 'jpg' });
@@ -49,8 +56,8 @@ const jsonLd = {
       <p class="kicker">The hotel edit</p>
       <h1>Hotels that look like luxury, <em>at a price you won't believe.</em></h1>
       <p class="lede">
-        Striking stays, mostly in the $80–150 range, and the occasional true-luxury pick. Every figure on this page
-        was read on Booking.com for 10–11 November 2026, two adults, one night.
+        Striking stays at about $80–150, plus one labeled splurge in each city. Every figure on this page was read
+        on Booking.com for 10–11 November 2026, two adults, one night.
       </p>
       <div class="hero-actions">
         <a class="btn" href="#featured">See the edit</a>
@@ -65,10 +72,10 @@ const jsonLd = {
       <div class="section-head">
         <div>
           <p class="kicker">This week’s desk</p>
-          <h2>Three rates we actually opened.</h2>
+          <h2>Three leads from the $150 edit.</h2>
         </div>
         <p>
-          Checked on Booking.com for one November night. The score is theirs, with the review count. The monogram is a
+          Each city page has three or four hotels at $150 or under, all scored 8.5 or higher. The monogram is a
           stand-in, not a photograph of the hotel. <a href={url('/cities')}>All three cities</a>.
         </p>
       </div>
@@ -82,10 +89,25 @@ const jsonLd = {
     <div class="wrap">
       <div class="section-head">
         <div>
+          <p class="kicker">The splurge</p>
+          <h2>One expensive hotel in each city.</h2>
+        </div>
+        <p>Checked the same night as the edit, and labeled so it is not mistaken for a $150 find.</p>
+      </div>
+      <div class="stay-grid cities">
+        {splurges.map((hotel) => <HotelCard hotel={hotel} cityName={cityName[hotel.data.city] ?? ''} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top: 0">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
           <p class="kicker">Cities</p>
           <h2>Paris, Rome, Barcelona.</h2>
         </div>
-        <p>Four hotels in each city. Add another by dropping a JSON file in the hotel collection.</p>
+        <p>The full edit, and the one splurge, sits on each city page.</p>
       </div>
       <div class="city-scroll">
         {

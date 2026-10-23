@@ -1,0 +1,45 @@
+{
+  "name": "Hotel Whistler",
+  "city": "paris",
+  "neighborhood": "Gare du Nord, 10th arrondissement",
+  "mark": "Wh",
+  "tone": "ink",
+  "tier": "edit",
+  "featured": false,
+  "featuredOrder": 0,
+  "cityOrder": 4,
+  "summary": "A hotel on rue de Saint-Quentin, a short walk from Gare du Nord.",
+  "description": "Hotel Whistler is at 36 rue de Saint-Quentin, in the 10th, the streets beside Gare du Nord. The listing presents it as a hotel rather than an apartment, which is why it is on this edit. The rate printed here is the Twin Room Booking.com showed for two adults on 10–11 November 2026.",
+  "facts": [
+    "36 rue de Saint-Quentin, 75010 Paris",
+    "10th arrondissement, by Gare du Nord",
+    "The checked room is the Twin Room"
+  ],
+  "officialCategory": null,
+  "address": {
+    "street": "36 rue de Saint-Quentin",
+    "postalCode": "75010",
+    "locality": "Paris",
+    "country": "France",
+    "countryCode": "FR"
+  },
+  "bookingUrl": "https://www.booking.com/hotel/fr/whistler.html",
+  "price": {
+    "status": "verified",
+    "currency": "USD",
+    "unit": "night",
+    "occupancy": "2 adults",
+    "stayDate": "2026-11-10 to 2026-11-11",
+    "checkedOn": "2026-10-23",
+    "note": "Checked Nov 10–11, 2026 · prices change",
+    "amount": 140,
+    "room": "Twin Room"
+  },
+  "review": {
+    "score": 8.5,
+    "count": 1090,
+    "source": "Booking.com",
+    "scale": 10,
+    "checkedOn": "2026-10-23"
+  }
+}
