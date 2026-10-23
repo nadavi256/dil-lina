@@ -14,6 +14,14 @@ const price = z.object({
   note: z.string().min(20),
 });
 
+const review = z.object({
+  score: z.number().min(1).max(10),
+  count: z.number().int().positive(),
+  source: z.literal('Booking.com'),
+  scale: z.literal(10),
+  checkedOn: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
+});
+
 const hotels = defineCollection({
   loader: glob({ pattern: '**/*.json', base: './src/content/hotels' }),
   schema: z.object({
@@ -39,6 +47,7 @@ const hotels = defineCollection({
     }),
     bookingUrl: z.url(),
     price,
+    review: review.nullable(),
   }),
 });
 

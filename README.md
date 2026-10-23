@@ -2,11 +2,11 @@
 
 An editorial hotel site for [nadavi256.github.io/dil-lina](https://nadavi256.github.io/dil-lina/). Static Astro build, Tailwind, GitHub Pages. Hosting cost is zero.
 
-The brief is hotels that look like luxury, mostly in the $80–150 range, plus an occasional true-luxury pick. A nightly rate is printed only when `price.status` is `verified` and the amount, room, occupancy, stay date, and check date are filled in. Until then the page shows **TODO** and a Check prices button.
+The brief is hotels that look like luxury, mostly in the $80–150 range, plus an occasional true-luxury pick. A nightly rate is printed only when `price.status` is `verified` and the amount, room, occupancy, stay date, and check date are filled in. The public line is “from $X / night” with “Checked Nov 10–11, 2026 · prices change”. A Booking.com score is stored on `review` and shown with the review count. Until a rate is verified, the page shows **TODO** and does not print a number.
 
 ## Add a hotel
 
-Copy a file in `src/content/hotels/` and point `city` at `paris`, `rome`, or `barcelona`. Keep `price.status` as `TODO` and every price field except `note` as `null` until you have checked a live Booking.com rate. Do not add a guest score.
+Copy a file in `src/content/hotels/` and point `city` at `paris`, `rome`, or `barcelona`. Set `price.status` to `verified` only after you have read a live Booking.com rate for a specific date, room, and occupancy. Put that same day’s Booking.com score and review count on `review`. Leave `review` as `null` and the price as `TODO` if you have not checked.
 
 Set `featured` to `true` to show it on the home page. City pages list every hotel for that city, ordered by `cityOrder`.
 

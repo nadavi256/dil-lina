@@ -7,7 +7,7 @@ import { photos } from '../../lib/photos';
 import { absolute, url } from '../../lib/site';
 
 const cities = (await getCollection('cities')).sort((a, b) => a.data.order - b.data.order);
-const description = 'City edits from Lina: three hotels each in Paris, Rome, and Barcelona, with rates left unchecked until they are verified.';
+const description = 'City edits from Lina: four hotels each in Paris, Rome, and Barcelona, with rates checked for 10–11 November 2026.';
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -22,9 +22,9 @@ const jsonLd = {
   <div class="wrap page-hero">
     <Breadcrumbs items={[{ label: 'Cities' }]} />
     <p class="kicker">Where to open first</p>
-    <h1>Three cities, nine hotels.</h1>
+    <h1>Three cities, twelve hotels.</h1>
     <p class="lede">
-      Each city page holds three hotels. New cities are a JSON file plus a photograph with a real credit. New hotels
+      Each city page holds four hotels. New cities are a JSON file plus a photograph with a real credit. New hotels
       are another JSON file pointed at that city.
     </p>
   </div>

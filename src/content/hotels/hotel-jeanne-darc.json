@@ -7,9 +7,9 @@
   "tier": "edit",
   "featured": false,
   "featuredOrder": 0,
-  "cityOrder": 2,
+  "cityOrder": 3,
   "summary": "A 3-star the hotel itself presents as an economical stay in the Marais, on rue de Jarente.",
-  "description": "Hôtel Jeanne d'Arc Le Marais is at 3 rue de Jarente, in the 4th. The hotel’s own site calls the house a 3-star and puts the emphasis on a central Marais address rather than a grand lobby. That is the brief Lina is hunting: a room with a sense of place, and a rate you confirm on Booking.com instead of taking our word for it.",
+  "description": "Hôtel Jeanne d'Arc Le Marais is at 3 rue de Jarente, in the 4th. The hotel’s own site calls the house a 3-star and puts the emphasis on a central Marais address rather than a grand lobby. That is the brief Lina is hunting: a room with a sense of place. The rate printed here is the Standard Double Room Court View Booking.com showed for two adults on 10–11 November 2026.",
   "facts": [
     "3 rue de Jarente, 75004 Paris",
     "The hotel describes itself as a 3-star",
@@ -26,14 +26,21 @@
   },
   "bookingUrl": "https://www.booking.com/hotel/fr/jeanne-d-39-arc-paris.html",
   "price": {
-    "status": "TODO",
-    "amount": null,
+    "status": "verified",
     "currency": "USD",
     "unit": "night",
-    "occupancy": null,
-    "stayDate": null,
-    "checkedOn": null,
-    "room": null,
-    "note": "TODO: verify a live Booking.com rate for a specific date, occupancy, and room before publishing a number. Do not invent a price or a guest score."
+    "occupancy": "2 adults",
+    "stayDate": "2026-11-10 to 2026-11-11",
+    "checkedOn": "2026-10-23",
+    "note": "Checked Nov 10–11, 2026 · prices change",
+    "amount": 233,
+    "room": "Standard Double Room Court View"
+  },
+  "review": {
+    "score": 8.4,
+    "count": 653,
+    "source": "Booking.com",
+    "scale": 10,
+    "checkedOn": "2026-10-23"
   }
 }

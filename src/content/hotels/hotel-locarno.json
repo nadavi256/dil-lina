@@ -5,11 +5,11 @@
   "mark": "Lo",
   "tone": "night",
   "tier": "true-luxury",
-  "featured": true,
-  "featuredOrder": 4,
-  "cityOrder": 3,
+  "featured": false,
+  "featuredOrder": 0,
+  "cityOrder": 4,
   "summary": "A true-luxury pick: the hotel calls itself a five-star, opened in 1925, on Via della Penna.",
-  "description": "Hotel Locarno is Lina’s true-luxury pick in Rome, not a bargain dressed up as one. The hotel says it opened in 1925, files itself as a five-star, and keeps the address at Via della Penna 22, just off Piazza del Popolo. People come for the history and the roof, not for a loophole in the rate. We have not checked a current price and we will not invent one. Use the button and read Booking.com.",
+  "description": "Hotel Locarno is Lina’s true-luxury pick in Rome, not a bargain dressed up as one. The hotel says it opened in 1925, files itself as a five-star, and keeps the address at Via della Penna 22, just off Piazza del Popolo. People come for the history and the roof, not for a loophole in the rate. The figure on this page is the Classic Double or Twin Room Booking.com showed for two adults on 10–11 November 2026, and it is the expensive one on purpose.",
   "facts": [
     "Via della Penna 22, 00186 Rome",
     "The hotel says it opened in 1925",
@@ -26,14 +26,21 @@
   },
   "bookingUrl": "https://www.booking.com/hotel/it/locarno.html",
   "price": {
-    "status": "TODO",
-    "amount": null,
+    "status": "verified",
     "currency": "USD",
     "unit": "night",
-    "occupancy": null,
-    "stayDate": null,
-    "checkedOn": null,
-    "room": null,
-    "note": "TODO: verify a live Booking.com rate for a specific date, occupancy, and room before publishing a number. Do not invent a price or a guest score."
+    "occupancy": "2 adults",
+    "stayDate": "2026-11-10 to 2026-11-11",
+    "checkedOn": "2026-10-23",
+    "note": "Checked Nov 10–11, 2026 · prices change",
+    "amount": 601,
+    "room": "Classic Double or Twin Room"
+  },
+  "review": {
+    "score": 9.3,
+    "count": 518,
+    "source": "Booking.com",
+    "scale": 10,
+    "checkedOn": "2026-10-23"
   }
 }

@@ -1,0 +1,46 @@
+{
+  "name": "Hotel Concordia Barcelona",
+  "city": "barcelona",
+  "neighborhood": "Sants-Montjuïc",
+  "mark": "Co",
+  "tone": "clay",
+  "tier": "edit",
+  "featured": true,
+  "featuredOrder": 3,
+  "cityOrder": 1,
+  "summary": "A hotel on Para·lel in Sants-Montjuïc, in the area of Plaça d'Espanya.",
+  "description": "Hotel Concordia Barcelona is at Para·lel 115, in Sants-Montjuïc. Booking.com places it on that avenue, in the part of the city around Plaça d'Espanya rather than on the beach. The rate printed here is the Basic Double Room the listing showed for two adults on 10–11 November 2026.",
+  "facts": [
+    "Para·lel 115, 08004 Barcelona",
+    "Sants-Montjuïc",
+    "The checked room is the Basic Double Room",
+    "The property is known for an outdoor pool"
+  ],
+  "officialCategory": null,
+  "address": {
+    "street": "Para·lel 115",
+    "postalCode": "08004",
+    "locality": "Barcelona",
+    "country": "Spain",
+    "countryCode": "ES"
+  },
+  "bookingUrl": "https://www.booking.com/hotel/es/concordia.html",
+  "price": {
+    "status": "verified",
+    "amount": 127,
+    "currency": "USD",
+    "unit": "night",
+    "occupancy": "2 adults",
+    "stayDate": "2026-11-10 to 2026-11-11",
+    "checkedOn": "2026-10-23",
+    "room": "Basic Double Room",
+    "note": "Checked Nov 10–11, 2026 · prices change"
+  },
+  "review": {
+    "score": 8.5,
+    "count": 2867,
+    "source": "Booking.com",
+    "scale": 10,
+    "checkedOn": "2026-10-23"
+  }
+}

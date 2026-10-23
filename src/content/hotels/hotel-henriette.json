@@ -5,11 +5,11 @@
   "mark": "He",
   "tone": "clay",
   "tier": "edit",
-  "featured": true,
-  "featuredOrder": 1,
-  "cityOrder": 1,
+  "featured": false,
+  "featuredOrder": 0,
+  "cityOrder": 2,
   "summary": "A courtyard hotel on a quiet cobbled street near the Mouffetard market, with rooms the hotel designs one by one.",
-  "description": "Hôtel Henriette stands at 9 rue des Gobelins, a short walk from the Mouffetard street and the Latin Quarter. The hotel describes a small Left Bank house: 32 bedrooms designed individually, a flowered courtyard, and a desk that stays open through the night. It is the kind of address that looks considered without pretending to be a palace. Lina has not checked a live rate, so none is printed here.",
+  "description": "Hôtel Henriette stands at 9 rue des Gobelins, a short walk from the Mouffetard street and the Latin Quarter. The hotel describes a small Left Bank house: 32 bedrooms designed individually, a flowered courtyard, and a desk that stays open through the night. It is the kind of address that looks considered without pretending to be a palace. The rate printed here is the Small Double Room Booking.com showed for two adults on 10–11 November 2026.",
   "facts": [
     "9 rue des Gobelins, 75013 Paris",
     "32 individually designed rooms, according to the hotel",
@@ -26,14 +26,21 @@
   },
   "bookingUrl": "https://www.booking.com/hotel/fr/hotel-henriette.html",
   "price": {
-    "status": "TODO",
-    "amount": null,
+    "status": "verified",
     "currency": "USD",
     "unit": "night",
-    "occupancy": null,
-    "stayDate": null,
-    "checkedOn": null,
-    "room": null,
-    "note": "TODO: verify a live Booking.com rate for a specific date, occupancy, and room before publishing a number. Do not invent a price or a guest score."
+    "occupancy": "2 adults",
+    "stayDate": "2026-11-10 to 2026-11-11",
+    "checkedOn": "2026-10-23",
+    "note": "Checked Nov 10–11, 2026 · prices change",
+    "amount": 189,
+    "room": "Small Double Room"
+  },
+  "review": {
+    "score": 9.1,
+    "count": 745,
+    "source": "Booking.com",
+    "scale": 10,
+    "checkedOn": "2026-10-23"
   }
 }

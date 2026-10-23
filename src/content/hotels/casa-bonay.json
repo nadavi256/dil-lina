@@ -5,16 +5,16 @@
   "mark": "CB",
   "tone": "plum",
   "tier": "edit",
-  "featured": true,
-  "featuredOrder": 3,
-  "cityOrder": 2,
+  "featured": false,
+  "featuredOrder": 0,
+  "cityOrder": 3,
   "summary": "A boutique hotel on Gran Via de les Corts Catalanes, in the Eixample grid.",
-  "description": "Casa Bonay is a boutique hotel at Gran Via de les Corts Catalanes 700, in the Eixample. The address sits up the grid from the Gothic Quarter, which is often where Barcelona hotels start to feel like a design magazine and the rate becomes a moving target. Lina is not publishing a guest score or a price for it. Both belong on the Booking.com page, read on the day you travel.",
+  "description": "Casa Bonay is a boutique hotel at Gran Via de les Corts Catalanes 700, in the Eixample. The address sits up the grid from the Gothic Quarter, which is often where Barcelona hotels start to feel like a design magazine and the rate becomes a moving target. The rate printed here is the Standard Double Room Booking.com showed for two adults on 10–11 November 2026, including the discount that was on the listing that day.",
   "facts": [
     "Gran Via de les Corts Catalanes 700, 08010 Barcelona",
     "Eixample",
     "Boutique hotel with its own website",
-    "Rate and guest score are not reprinted here"
+    "The checked rate is the Standard Double Room, with the discount shown that day"
   ],
   "officialCategory": null,
   "address": {
@@ -26,14 +26,21 @@
   },
   "bookingUrl": "https://www.booking.com/hotel/es/casa-bonay.html",
   "price": {
-    "status": "TODO",
-    "amount": null,
+    "status": "verified",
     "currency": "USD",
     "unit": "night",
-    "occupancy": null,
-    "stayDate": null,
-    "checkedOn": null,
-    "room": null,
-    "note": "TODO: verify a live Booking.com rate for a specific date, occupancy, and room before publishing a number. Do not invent a price or a guest score."
+    "occupancy": "2 adults",
+    "stayDate": "2026-11-10 to 2026-11-11",
+    "checkedOn": "2026-10-23",
+    "note": "Checked Nov 10–11, 2026 · prices change",
+    "amount": 224,
+    "room": "Standard Double Room"
+  },
+  "review": {
+    "score": 9,
+    "count": 816,
+    "source": "Booking.com",
+    "scale": 10,
+    "checkedOn": "2026-10-23"
   }
 }

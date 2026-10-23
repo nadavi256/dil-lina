@@ -86,7 +86,7 @@ const jsonLd = [
         hotel.data.officialCategory && (
           <p>
             Official category: {hotel.data.officialCategory}-star, as stated by the hotel. That is a classification,
-            not a guest score. Lina does not reprint review averages.
+            not the Booking.com score printed beside the rate.
           </p>
         )
       }
@@ -102,7 +102,7 @@ const jsonLd = [
         {address.street}<br />
         {address.postalCode} {address.locality}, {address.country}
       </p>
-      <PriceNote price={hotel.data.price} />
+      <PriceNote price={hotel.data.price} review={hotel.data.review} />
       <BookLink href={hotel.data.bookingUrl} hotel={hotel.data.name} />
     </aside>
   </div>
