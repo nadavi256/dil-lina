@@ -2,7 +2,7 @@
 
 An editorial hotel site for [nadavi256.github.io/dil-lina](https://nadavi256.github.io/dil-lina/). Static Astro build, Tailwind, GitHub Pages. Hosting cost is zero.
 
-The brief is hotels that look like luxury, mostly in the $80–150 range, plus an occasional true-luxury pick. A nightly rate is printed only when `price.status` is `verified` and the amount, room, occupancy, stay date, and check date are filled in. The public line is “from $X / night” with “Checked Nov 10–11, 2026 · prices change”. A Booking.com score is stored on `review` and shown with the review count. Until a rate is verified, the page shows **TODO** and does not print a number.
+The brief is hotels that look like luxury at about $80–150, plus one true-luxury hotel in each city. Hotels with `tier` set to `edit` must be verified at $150 or under and a Booking.com score of 8.5 or higher. `tier` set to `true-luxury` is the single splurge for that city, labeled “The splurge” on the page. A nightly rate is printed only when `price.status` is `verified`. The public line is “from $X / night” with “Checked Nov 10–11, 2026 · prices change”.
 
 ## Add a hotel
 

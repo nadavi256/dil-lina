@@ -1,0 +1,46 @@
+{
+  "name": "Eccelso Hotel",
+  "city": "rome",
+  "neighborhood": "Prati, near the Vatican",
+  "mark": "Ec",
+  "tone": "wine",
+  "tier": "edit",
+  "featured": false,
+  "featuredOrder": 0,
+  "cityOrder": 3,
+  "summary": "A hotel on Via Catone in Prati, which the listing puts a ten-minute walk from the Vatican Museums.",
+  "description": "Eccelso Hotel is at Via Catone 3, in Prati. The listing says the Vatican Museums are a ten-minute walk. The rate printed here is the Standard Double Room Booking.com showed for two adults on 10–11 November 2026.",
+  "facts": [
+    "Via Catone 3, 00192 Rome",
+    "Prati",
+    "The listing says the Vatican Museums are a ten-minute walk",
+    "The checked room is the Standard Double Room"
+  ],
+  "officialCategory": null,
+  "address": {
+    "street": "Via Catone 3",
+    "postalCode": "00192",
+    "locality": "Rome",
+    "country": "Italy",
+    "countryCode": "IT"
+  },
+  "bookingUrl": "https://www.booking.com/hotel/it/eccelso.html",
+  "price": {
+    "status": "verified",
+    "currency": "USD",
+    "unit": "night",
+    "occupancy": "2 adults",
+    "stayDate": "2026-11-10 to 2026-11-11",
+    "checkedOn": "2026-10-23",
+    "note": "Checked Nov 10–11, 2026 · prices change",
+    "amount": 133,
+    "room": "Standard Double Room"
+  },
+  "review": {
+    "score": 9,
+    "count": 955,
+    "source": "Booking.com",
+    "scale": 10,
+    "checkedOn": "2026-10-23"
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Hotel El Palace Barcelona",
+  "city": "barcelona",
+  "neighborhood": "Eixample, Gran Via",
+  "mark": "EP",
+  "tone": "night",
+  "tier": "true-luxury",
+  "featured": false,
+  "featuredOrder": 0,
+  "cityOrder": 4,
+  "summary": "The splurge in Barcelona: a 1919 hotel with a neo-classical façade on Gran Via.",
+  "description": "Hotel El Palace Barcelona is Lina’s splurge in the city. The listing says it opened in 1919 at Gran Via de les Corts Catalanes 668, with a neo-classical façade, and describes a spa and a rooftop pool. The rate printed here is the Classic Double Room Booking.com showed for two adults on 10–11 November 2026.",
+  "facts": [
+    "Gran Via de les Corts Catalanes 668, 08010 Barcelona",
+    "The listing says the hotel opened in 1919",
+    "Neo-classical façade, per the listing",
+    "The checked room is the Classic Double Room"
+  ],
+  "officialCategory": null,
+  "address": {
+    "street": "Gran Via de les Corts Catalanes 668",
+    "postalCode": "08010",
+    "locality": "Barcelona",
+    "country": "Spain",
+    "countryCode": "ES"
+  },
+  "bookingUrl": "https://www.booking.com/hotel/es/el2bcn.html",
+  "price": {
+    "status": "verified",
+    "currency": "USD",
+    "unit": "night",
+    "occupancy": "2 adults",
+    "stayDate": "2026-11-10 to 2026-11-11",
+    "checkedOn": "2026-10-23",
+    "note": "Checked Nov 10–11, 2026 · prices change",
+    "amount": 513,
+    "room": "Classic Double Room"
+  },
+  "review": {
+    "score": 9.3,
+    "count": 1202,
+    "source": "Booking.com",
+    "scale": 10,
+    "checkedOn": "2026-10-23"
+  }
+}

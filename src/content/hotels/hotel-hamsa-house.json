@@ -1,0 +1,46 @@
+{
+  "name": "Hotel Hamsa House",
+  "city": "barcelona",
+  "neighborhood": "Gothic Quarter",
+  "mark": "Ha",
+  "tone": "olive",
+  "tier": "edit",
+  "featured": false,
+  "featuredOrder": 0,
+  "cityOrder": 3,
+  "summary": "A Gothic Quarter hotel whose listing describes a stone archway opening onto a plaza.",
+  "description": "Hotel Hamsa House is at Carrer Nou de Zurbano 4, in Ciutat Vella. The listing describes a stone archway that opens onto a plaza in the Gothic Quarter. The rate printed here is the Standard Double Room Booking.com showed for two adults on 10–11 November 2026.",
+  "facts": [
+    "Carrer Nou de Zurbano 4, 08002 Barcelona",
+    "Gothic Quarter",
+    "The listing describes a stone archway onto a plaza",
+    "The checked room is the Standard Double Room"
+  ],
+  "officialCategory": null,
+  "address": {
+    "street": "Carrer Nou de Zurbano 4",
+    "postalCode": "08002",
+    "locality": "Barcelona",
+    "country": "Spain",
+    "countryCode": "ES"
+  },
+  "bookingUrl": "https://www.booking.com/hotel/es/sonder-los-arcos.html",
+  "price": {
+    "status": "verified",
+    "currency": "USD",
+    "unit": "night",
+    "occupancy": "2 adults",
+    "stayDate": "2026-11-10 to 2026-11-11",
+    "checkedOn": "2026-10-23",
+    "note": "Checked Nov 10–11, 2026 · prices change",
+    "amount": 145,
+    "room": "Standard Double Room"
+  },
+  "review": {
+    "score": 8.8,
+    "count": 368,
+    "source": "Booking.com",
+    "scale": 10,
+    "checkedOn": "2026-10-23"
+  }
+}

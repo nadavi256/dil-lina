@@ -8,7 +8,7 @@ minutes: 7
 photo: paris-night
 ---
 
-Lina’s brief is simple to say and annoying to do well. Find a hotel that looks like a treat, then see if a real night, for two people, in a real room, lands somewhere around $80 to $150. The second half is the part most roundups skip. They publish a number from memory, or from a screenshot that expired on a Tuesday in March. This site will not. A rate appears here only after it has been checked for a date, a room, and an occupancy. The figures on the hotel pages were read on Booking.com for 10–11 November 2026. Plenty of them sit above $150 on that night. The button still goes to the live page, because the number will move.
+Lina’s brief is simple to say and annoying to do well. Find a hotel that looks like a treat, then see if a real night, for two people, in a real room, lands somewhere around $80 to $150. The second half is the part most roundups skip. They publish a number from memory, or from a screenshot that expired on a Tuesday in March. This site will not. A rate appears here only after it has been checked for a date, a room, and an occupancy. The figures on the hotel pages were read on Booking.com for 10–11 November 2026. The edit itself is $150 or under. Each city also keeps one hotel above that line, labeled The splurge, so the full-price version stays visible. The button still goes to the live page, because the number will move.
 
 That does not make the hunt mystical. The hotels that clear the bar tend to share a few boring traits.
 
