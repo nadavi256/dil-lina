@@ -27,3 +27,7 @@ npm run links
 Booking.com buttons are ordinary hotel URLs. The Stay22 Let Me Allez loader in `src/components/Stay22.astro` uses `aid=dillina` and rewrites those links after the page loads.
 
 City photographs are from Unsplash and credited on the page. Hotel cards do not use another property’s photo.
+
+## Deploy
+
+GitHub Pages publishes the root of `main`. The Actions workflow in `.github/workflows/pages.yml` builds with Node 24, checks content and links, then commits that output to the repository root. The commit message includes `[skip pages]` so the workflow does not run again on its own push. `public/.nojekyll` is copied into the build so Pages uploads the files as they are, including `_astro`. Hosting stays on the free GitHub Pages plan.

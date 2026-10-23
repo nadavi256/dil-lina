@@ -5,53 +5,61 @@ on:
     branches: [main]
   workflow_dispatch:
 
+# Pages for this repo is locked to "Deploy from branch: main /".
+# The token cannot switch it to a GitHub Actions source, so this
+# workflow publishes the built site onto that branch. .nojekyll
+# makes the legacy publisher upload the files as-is.
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: write
 
 concurrency:
   group: pages
   cancel-in-progress: false
 
 jobs:
-  build:
+  publish:
+    if: ${{ github.event_name != 'push' || !contains(github.event.head_commit.message, '[skip pages]') }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 24
           cache: npm
+
       - name: Install
         run: npm ci
+
       - name: Check content
         run: npm run content
+
       - name: Build
         run: npm run build
+
       - name: Check links
         run: npm run links
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: dist
 
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Publish with GitHub Actions
-        env:
-          GH_TOKEN: ${{ github.token }}
+      - name: Commit the built site to the repository root
         run: |
-          gh api --method PUT -H "Accept: application/vnd.github+json" \
-            "/repos/${{ github.repository }}/pages" \
-            -f build_type=workflow
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+          set -euo pipefail
+          test -f dist/index.html
+          test -f dist/.nojekyll
+          for path in _astro cities hotels guides about contact disclosure privacy terms; do
+            rm -rf "$path"
+          done
+          rm -f index.html 404.html favicon.svg robots.txt og.jpg .nojekyll sitemap-*.xml
+          cp -a dist/. .
+          test -f index.html
+          test -f .nojekyll
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "Build output already matches the repository."
+            exit 0
+          fi
+          git commit -m "Publish the Lina site [skip pages]"
+          git push
